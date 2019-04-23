@@ -52,6 +52,7 @@ import { findElementById, getDOM } from '../../utils/dom';
  */
 let component = Component.extend(TransitionSupport, {
   layout,
+  tagName: '',
 
   /**
    * Visibility of the modal. Toggle to show/hide with CSS transitions.
