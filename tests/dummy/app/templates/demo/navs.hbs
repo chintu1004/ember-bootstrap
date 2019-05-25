@@ -4,8 +4,10 @@
       @controlType="power-select"
       @options={{typeChoices}}
       @label="Type"
-      @property="type" as |el|>
-      <el.control @searchEnabled />
+      @property="type"
+      class="mr-2"
+      as |el|>
+      <el.control @searchEnabled={{false}} />
     </form.element>
     <form.element
       @controlType="checkbox"
@@ -13,22 +15,22 @@
       @label="Stacked"
       @property="stacked"
       @onChange={{action "updateStacked"}}
+      class="mr-2"
      />
-
     <form.element
       @controlType="checkbox"
       @disabled={{stacked}}
       @label="Justified"
       @property="justified"
+      class="mr-2"
      />
-
     <form.element
       @controlType="checkbox"
       @disabled={{stacked}}
       @label="Fill"
       @property="fill"
+      class="mr-2"
      />
-
   </BsForm>
   <hr>
   <!-- BEGIN-SNIPPET nav-demo -->
@@ -58,5 +60,13 @@
   <!-- END-SNIPPET -->
 </div>
 <div class="highlight">
-  <CodeSnippet @name="nav-demo.hbs" />
+  <CodeSnippet
+    @name="nav-demo.hbs"
+    @dynamicProperties={{hash
+      type=type
+      stacked=stacked
+      justified=justified
+      fill=fill
+    }}
+  />
 </div>

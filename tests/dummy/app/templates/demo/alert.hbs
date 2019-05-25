@@ -20,25 +20,27 @@
       @controlType="checkbox"
       @label="Show/Hide"
       @property="visible"
+      class="mr-2"
      />
-
     <form.element
       @controlType="checkbox"
       @label="Fade animation"
       @property="fade"
-     />
-
+      class="mr-2"
+    />
     <form.element
       @controlType="checkbox"
       @label="Dismissible"
       @property="dismissible"
-     />
-
+      class="mr-2"
+    />
     <form.element
       @controlType="power-select"
       @options={{typeChoices}}
       @label="Type"
-      @property="type" as |el|
+      @property="type"
+      class="mr-2"
+      as |el|
     >
       <el.control @searchEnabled />
     </form.element>
@@ -55,5 +57,13 @@
   <!-- END-SNIPPET -->
 </div>
 <div class="highlight">
-  <CodeSnippet @name="alert-options.hbs" />
+  <CodeSnippet
+    @name="alert-options.hbs"
+    @dynamicProperties={{hash
+      visible=visible
+      fade=fade
+      dismissible=dismissible
+      type=type
+    }}
+  />
 </div>
